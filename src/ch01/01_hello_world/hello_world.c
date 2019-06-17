@@ -1,7 +1,10 @@
-#include <stdio.h>
+#include <stdio.h> //Defines printf
 
-int main(){
-  printf("Hello world!\n");
+//The main function
+int main(void) {
+    //Print a string to the screen
+    printf("Hello world!\n");
 
-  return 0;
+    //End the main program
+    return 0;
 }
