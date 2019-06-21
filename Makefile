@@ -34,17 +34,26 @@ CFLAGSDBG=
 
 endif
 
+#Data for CH01_01 example
 CH01SRC01=./src/ch01/01_hello_world/hello_world.c
 CH01DST01=./bin/CH01_01_Hello_World
 CH01DST01DBG=./bin/CH01_01_Hello_World_dbg
+
+#data for CH01_02 example
+CH01SRC02=./src/ch01/02_cats/cats.c
+CH01DST02=./bin/CH01_02_Cats
+CH01DST02DBG=./bin/CH01_02_Cats_dbg
+
 
 default: debug
 
 all: release
 
-release: ./ch01/01_hello_world/hello_world 
+release: ./ch01/01_hello_world/hello_world \
+		./ch01/02_cats/cats
 
-debug: ./ch01/01_hello_world/hello_world_dbg 
+debug: ./ch01/01_hello_world/hello_world_dbg \
+	./ch01/02_cats/cats_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -54,4 +63,10 @@ clean:
 
 ./ch01/01_hello_world/hello_world_dbg: ${CH01SRC01}
 	tcc -g ${CH01SRC01} -o ${CH01DST01DBG} ${CFLAGSDBG} 
+
+./ch01/02_cats/cats: ${CH01SRC02}
+	gcc -s $(CFLAGS) ${CH01SRC02} -o ${CH01DST02} 
+
+./ch01/02_cats/cats_dbg: ${CH01SRC02}
+	tcc -g ${CH01SRC02} -o ${CH01DST02DBG} ${CFLAGSDBG} 
 
