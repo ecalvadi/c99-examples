@@ -58,4 +58,13 @@ The binary are saved on "bin" folder. To run type in the console the following e
 ./binary_to_run
 ~~~
 
+### 3.-Chapters
+
+This repository are divided in Chapters (`chxx`), the chapters are:
+
+ch01 - Gettin Started
+ch02 - Introducction
+Ch03 - Data
+... more soon.
+
 Please, send me an email to improve this repository: hector@eclipsedpixel.com 
