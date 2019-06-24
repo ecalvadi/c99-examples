@@ -44,16 +44,25 @@ CH01SRC02=./src/ch01/02_cats/cats.c
 CH01DST02=./bin/CH01_02_Cats
 CH01DST02DBG=./bin/CH01_02_Cats_dbg
 
+#data for CH01_02 example
+CH02SRC01=./src/ch02/01_simple_computer/simple_computer.c
+CH02DST01=./bin/CH02_01_Simple_Computer
+CH02DST01DBG=./bin/CH02_01_Simple_Computer_dbg
+
 
 default: debug
 
 all: release
 
 release: ./ch01/01_hello_world/hello_world \
-		./ch01/02_cats/cats
+		./ch01/02_cats/cats \
+		./ch02/01_simple_computer/simple_computer
+
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
-	./ch01/02_cats/cats_dbg
+		./ch01/02_cats/cats_dbg \
+		./ch02/01_simple_computer/simple_computer_dbg
+
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -69,4 +78,10 @@ clean:
 
 ./ch01/02_cats/cats_dbg: ${CH01SRC02}
 	tcc -g ${CH01SRC02} -o ${CH01DST02DBG} ${CFLAGSDBG} 
+
+./ch01/01_simple_computer/simple_computer: ${CH02SRC01}
+	gcc -s $(CFLAGS) ${CH02SRC01} -o ${CH02DST01} 
+
+./ch01/01_simple_computer/simple_computer_dbg: ${CH02SRC01}
+	tcc -g ${CH02SRC01} -o ${CH02DST01DBG} ${CFLAGSDBG} 
 
