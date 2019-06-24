@@ -79,9 +79,9 @@ clean:
 ./ch01/02_cats/cats_dbg: ${CH01SRC02}
 	tcc -g ${CH01SRC02} -o ${CH01DST02DBG} ${CFLAGSDBG} 
 
-./ch01/01_simple_computer/simple_computer: ${CH02SRC01}
+./ch02/01_simple_computer/simple_computer: ${CH02SRC01}
 	gcc -s $(CFLAGS) ${CH02SRC01} -o ${CH02DST01} 
 
-./ch01/01_simple_computer/simple_computer_dbg: ${CH02SRC01}
+./ch02/01_simple_computer/simple_computer_dbg: ${CH02SRC01}
 	tcc -g ${CH02SRC01} -o ${CH02DST01DBG} ${CFLAGSDBG} 
 
