@@ -59,10 +59,15 @@ CH02SRC03=./src/ch02/03_two_func/two_func.c
 CH02DST03=./bin/CH02_03_Two_Func
 CH02DST03DBG=./bin/CH02_03_Two_Func_dbg
 
-#data for CH02_03 example
+#data for CH02_04 example
 CH02SRC04=./src/ch02/04_squared_cube/squared_cube.c
 CH02DST04=./bin/CH02_04_Squared_Cube
 CH02DST04DBG=./bin/CH02_04_Squared_Cube_dbg
+
+#data for CH03_01 example
+CH03SRC01=./src/ch03/01_platinium/platinium.c
+CH03DST01=./bin/CH03_01_Platinium
+CH03DST01DBG=./bin/CH03_01_Platinium_dbg
 
 
 default: debug
@@ -74,18 +79,16 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch02/01_simple_computer/simple_computer \
 		./ch02/02_fathoms_to_feet/fathoms_to_feet \
 		./ch02/03_two_func/two_func \
-		./ch02/04_squared_cube/squared_cube
-
-
+		./ch02/04_squared_cube/squared_cube \
+		./ch03/01_platinium/platinium
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
 		./ch02/01_simple_computer/simple_computer_dbg \
 		./ch02/02_fathoms_to_feet/fathoms_to_feet_dbg \
 		./ch02/03_two_func/two_func_dbg \
-		./ch02/04_squared_cube/squared_cube_dbg
-
-
+		./ch02/04_squared_cube/squared_cube_dbg \
+		./ch03/01_platinium/platinium_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -126,4 +129,9 @@ clean:
 ./ch02/04_squared_cube/squared_cube_dbg: ${CH02SRC04}
 	tcc -g ${CH02SRC04} -o ${CH02DST04DBG} ${CFLAGSDBG} 
 
+./ch03/01_platinium/platinium: ${CH03SRC01}
+	gcc -s $(CFLAGS) ${CH03SRC01} -o ${CH03DST01} 
+
+./ch03/01_platinium/platinium_dbg: ${CH03SRC01}
+	tcc -g ${CH03SRC01} -o ${CH03DST01DBG} ${CFLAGSDBG} 
 
