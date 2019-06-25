@@ -54,6 +54,11 @@ CH02SRC02=./src/ch02/02_fathoms_to_feet/fathoms_to_feet.c
 CH02DST02=./bin/CH02_02_Fathoms_to_feet
 CH02DST02DBG=./bin/CH02_02_Fathoms_to_feet_dbg
 
+#data for CH02_03 example
+CH02SRC03=./src/ch02/03_two_func/two_func.c
+CH02DST03=./bin/CH02_03_Two_Func
+CH02DST03DBG=./bin/CH02_03_Two_Func_dbg
+
 
 default: debug
 
@@ -62,14 +67,16 @@ all: release
 release: ./ch01/01_hello_world/hello_world \
 		./ch01/02_cats/cats \
 		./ch02/01_simple_computer/simple_computer \
-		./ch02/02_fathoms_to_feet/fathoms_to_feet
+		./ch02/02_fathoms_to_feet/fathoms_to_feet \
+		./ch02/03_two_func/two_func
 
 
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
 		./ch02/01_simple_computer/simple_computer_dbg \
-		./ch02/02_fathoms_to_feet/fathoms_to_feet_dbg
+		./ch02/02_fathoms_to_feet/fathoms_to_feet_dbg \
+		./ch02/03_two_func/two_func_dbg
 
 
 
@@ -99,5 +106,11 @@ clean:
 
 ./ch02/02_fathoms_to_feet/fathoms_to_feet_dbg: ${CH02SRC02}
 	tcc -g ${CH02SRC02} -o ${CH02DST02DBG} ${CFLAGSDBG} 
+
+./ch02/03_two_func/two_func: ${CH02SRC03}
+	gcc -s $(CFLAGS) ${CH02SRC03} -o ${CH02DST03} 
+
+./ch02/03_two_func/two_func_dbg: ${CH02SRC03}
+	tcc -g ${CH02SRC03} -o ${CH02DST03DBG} ${CFLAGSDBG} 
 
 
