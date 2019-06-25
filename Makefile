@@ -59,6 +59,11 @@ CH02SRC03=./src/ch02/03_two_func/two_func.c
 CH02DST03=./bin/CH02_03_Two_Func
 CH02DST03DBG=./bin/CH02_03_Two_Func_dbg
 
+#data for CH02_03 example
+CH02SRC04=./src/ch02/04_squared_cube/squared_cube.c
+CH02DST04=./bin/CH02_04_Squared_Cube
+CH02DST04DBG=./bin/CH02_04_Squared_Cube_dbg
+
 
 default: debug
 
@@ -68,7 +73,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch01/02_cats/cats \
 		./ch02/01_simple_computer/simple_computer \
 		./ch02/02_fathoms_to_feet/fathoms_to_feet \
-		./ch02/03_two_func/two_func
+		./ch02/03_two_func/two_func \
+		./ch02/04_squared_cube/squared_cube
 
 
 
@@ -76,7 +82,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
 		./ch02/01_simple_computer/simple_computer_dbg \
 		./ch02/02_fathoms_to_feet/fathoms_to_feet_dbg \
-		./ch02/03_two_func/two_func_dbg
+		./ch02/03_two_func/two_func_dbg \
+		./ch02/04_squared_cube/squared_cube_dbg
 
 
 
@@ -112,5 +119,11 @@ clean:
 
 ./ch02/03_two_func/two_func_dbg: ${CH02SRC03}
 	tcc -g ${CH02SRC03} -o ${CH02DST03DBG} ${CFLAGSDBG} 
+
+./ch02/04_squared_cube/squared_cube: ${CH02SRC04}
+	gcc -s $(CFLAGS) ${CH02SRC04} -o ${CH02DST04} 
+
+./ch02/04_squared_cube/squared_cube_dbg: ${CH02SRC04}
+	tcc -g ${CH02SRC04} -o ${CH02DST04DBG} ${CFLAGSDBG} 
 
 
