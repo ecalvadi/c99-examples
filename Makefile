@@ -69,6 +69,11 @@ CH03SRC01=./src/ch03/01_platinium/platinium.c
 CH03DST01=./bin/CH03_01_Platinium
 CH03DST01DBG=./bin/CH03_01_Platinium_dbg
 
+#data for CH03_02 example
+CH03SRC02=./src/ch03/02_print1/print1.c
+CH03DST02=./bin/CH03_02_Print1
+CH03DST02DBG=./bin/CH03_02_Print1_dbg
+
 
 default: debug
 
@@ -80,7 +85,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch02/02_fathoms_to_feet/fathoms_to_feet \
 		./ch02/03_two_func/two_func \
 		./ch02/04_squared_cube/squared_cube \
-		./ch03/01_platinium/platinium
+		./ch03/01_platinium/platinium \
+		./ch03/02_print1/print1
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -88,7 +94,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch02/02_fathoms_to_feet/fathoms_to_feet_dbg \
 		./ch02/03_two_func/two_func_dbg \
 		./ch02/04_squared_cube/squared_cube_dbg \
-		./ch03/01_platinium/platinium_dbg
+		./ch03/01_platinium/platinium_dbg \
+		./ch03/02_print1/print1_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -134,4 +141,11 @@ clean:
 
 ./ch03/01_platinium/platinium_dbg: ${CH03SRC01}
 	tcc -g ${CH03SRC01} -o ${CH03DST01DBG} ${CFLAGSDBG} 
+
+./ch03/02_print1/print1: ${CH03SRC02}
+	gcc -s $(CFLAGS) ${CH03SRC02} -o ${CH03DST02} 
+
+./ch03/02_print1/print1_dbg: ${CH03SRC02}
+	tcc -g ${CH03SRC02} -o ${CH03DST02DBG} ${CFLAGSDBG} 
+
 
