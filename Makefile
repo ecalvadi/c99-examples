@@ -84,6 +84,11 @@ CH03SRC04=./src/ch03/04_toobig/toobig.c
 CH03DST04=./bin/CH03_04_Toobig
 CH03DST04DBG=./bin/CH03_04_Toobig_dbg
 
+#data for CH03_05 example
+CH03SRC05=./src/ch03/05_integers/integers.c
+CH03DST05=./bin/CH03_05_Integers
+CH03DST05DBG=./bin/CH03_05_Integers_dbg
+
 
 default: debug
 
@@ -98,7 +103,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch03/01_platinium/platinium \
 		./ch03/02_print1/print1 \
 		./ch03/03_bases/bases \
-		./ch03/04_toobig/toobig
+		./ch03/04_toobig/toobig \
+		./ch03/05_integers/integers
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -109,7 +115,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch03/01_platinium/platinium_dbg \
 		./ch03/02_print1/print1_dbg \
 		./ch03/03_bases/bases_dbg \
-		./ch03/04_toobig/toobig_dbg
+		./ch03/04_toobig/toobig_dbg \
+		./ch03/05_integers/integers_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -173,5 +180,11 @@ clean:
 
 ./ch03/04_toobig/toobig_dbg: ${CH03SRC04}
 	tcc -g ${CH03SRC04} -o ${CH03DST04DBG} ${CFLAGSDBG} 
+
+./ch03/05_integers/integers: ${CH03SRC05}
+	gcc -s $(CFLAGS) ${CH03SRC05} -o ${CH03DST05} 
+
+./ch03/05_integers/integers_dbg: ${CH03SRC05}
+	tcc -g ${CH03SRC05} -o ${CH03DST05DBG} ${CFLAGSDBG} 
 
 
