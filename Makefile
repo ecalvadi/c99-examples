@@ -94,6 +94,11 @@ CH03SRC06=./src/ch03/06_charcode/charcode.c
 CH03DST06=./bin/CH03_06_Charcode
 CH03DST06DBG=./bin/CH03_06_Charcode_dbg
 
+#data for CH03_07 example
+CH03SRC07=./src/ch03/07_altnames/altnames.c
+CH03DST07=./bin/CH03_07_Altnames
+CH03DST07DBG=./bin/CH03_07_Altnames_dbg
+
 
 default: debug
 
@@ -110,7 +115,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch03/03_bases/bases \
 		./ch03/04_toobig/toobig \
 		./ch03/05_integers/integers \
-		./ch03/06_charcode/charcode
+		./ch03/06_charcode/charcode \
+		./ch03/07_altnames/altnames
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -123,7 +129,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch03/03_bases/bases_dbg \
 		./ch03/04_toobig/toobig_dbg \
 		./ch03/05_integers/integers_dbg \
-		./ch03/06_charcode/charcode_dbg
+		./ch03/06_charcode/charcode_dbg \
+		./ch03/07_altnames/altnames_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -199,5 +206,11 @@ clean:
 
 ./ch03/06_charcode/charcode_dbg: ${CH03SRC06}
 	tcc -g ${CH03SRC06} -o ${CH03DST06DBG} ${CFLAGSDBG} 
+
+./ch03/07_altnames/altnames: ${CH03SRC07}
+	gcc -s $(CFLAGS) ${CH03SRC07} -o ${CH03DST07} 
+
+./ch03/07_altnames/altnames_dbg: ${CH03SRC07}
+	tcc -g ${CH03SRC07} -o ${CH03DST07DBG} ${CFLAGSDBG} 
 
 
