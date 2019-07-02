@@ -109,6 +109,11 @@ CH03SRC09=./src/ch03/09_floaterr/floaterr.c
 CH03DST09=./bin/CH03_09_Floaterr
 CH03DST09DBG=./bin/CH03_09_FloatErr_dbg
 
+#data for CH03_10 example
+CH03SRC10=./src/ch03/10_typesize/typesize.c
+CH03DST10=./bin/CH03_10_Typesize
+CH03DST10DBG=./bin/CH03_10_Typesize_dbg
+
 
 default: debug
 
@@ -128,7 +133,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch03/06_charcode/charcode \
 		./ch03/07_altnames/altnames \
 		./ch03/08_showfloat/showfloat \
-		./ch03/09_floaterr/floaterr
+		./ch03/09_floaterr/floaterr \
+		./ch03/10_typesize/typesize
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -144,7 +150,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch03/06_charcode/charcode_dbg \
 		./ch03/07_altnames/altnames_dbg \
 		./ch03/08_showfloat/showfloat_dbg \
-		./ch03/09_floaterr/floaterr_dbg
+		./ch03/09_floaterr/floaterr_dbg \
+		./ch03/10_typesize/typesize_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -238,5 +245,11 @@ clean:
 
 ./ch03/09_floaterr/floaterr_dbg: ${CH03SRC09}
 	tcc -g ${CH03SRC09} -o ${CH03DST09DBG} ${CFLAGSDBG} 
+
+./ch03/10_typesize/typesize: ${CH03SRC10}
+	gcc -s $(CFLAGS) ${CH03SRC10} -o ${CH03DST10} 
+
+./ch03/10_typesize/typesize_dbg: ${CH03SRC10}
+	tcc -g ${CH03SRC10} -o ${CH03DST10DBG} ${CFLAGSDBG} 
 
 
