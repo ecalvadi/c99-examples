@@ -102,6 +102,11 @@ CH03DST10=./bin/CH03_10_Typesize
 CH03SRC11=./src/ch03/11_badcount/badcount.c
 CH03DST11=./bin/CH03_11_Badcount
 
+#data for CH03_12 example
+CH03SRC12=./src/ch03/12_escape/escape.c
+CH03DST12=./bin/CH03_12_Escape
+
+
 
 default: debug
 
@@ -123,7 +128,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch03/08_showfloat/showfloat \
 		./ch03/09_floaterr/floaterr \
 		./ch03/10_typesize/typesize \
-		./ch03/11_badcount/badcount
+		./ch03/11_badcount/badcount \
+		./ch03/12_escape/escape
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -141,7 +147,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch03/08_showfloat/showfloat_dbg \
 		./ch03/09_floaterr/floaterr_dbg \
 		./ch03/10_typesize/typesize_dbg \
-		./ch03/11_badcount/badcount_dbg
+		./ch03/11_badcount/badcount_dbg \
+		./ch03/12_escape/escape_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -247,5 +254,11 @@ clean:
 
 ./ch03/11_badcount/badcount_dbg: ${CH03SRC11}
 	tcc -g ${CH03SRC11} -o ${CH03DST11}_dbg ${CFLAGSDBG} 
+
+./ch03/12_escape/escape: ${CH03SRC12}
+	gcc -s $(CFLAGS) ${CH03SRC12} -o ${CH03DST12} 
+
+./ch03/12_escape/escape_dbg: ${CH03SRC12}
+	tcc -g ${CH03SRC12} -o ${CH03DST12}_dbg ${CFLAGSDBG} 
 
 
