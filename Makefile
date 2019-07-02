@@ -106,6 +106,10 @@ CH03DST11=./bin/CH03_11_Badcount
 CH03SRC12=./src/ch03/12_escape/escape.c
 CH03DST12=./bin/CH03_12_Escape
 
+#data for CH04_01 example
+CH04SRC01=./src/ch04/01_talkback/talkback.c
+CH04DST01=./bin/CH04_01_Talkback
+
 
 
 default: debug
@@ -129,7 +133,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch03/09_floaterr/floaterr \
 		./ch03/10_typesize/typesize \
 		./ch03/11_badcount/badcount \
-		./ch03/12_escape/escape
+		./ch03/12_escape/escape \
+		./ch04/01_talkback/talkback
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -148,7 +153,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch03/09_floaterr/floaterr_dbg \
 		./ch03/10_typesize/typesize_dbg \
 		./ch03/11_badcount/badcount_dbg \
-		./ch03/12_escape/escape_dbg
+		./ch03/12_escape/escape_dbg \
+		./ch04/01_talkback/talkback_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -260,5 +266,11 @@ clean:
 
 ./ch03/12_escape/escape_dbg: ${CH03SRC12}
 	tcc -g ${CH03SRC12} -o ${CH03DST12}_dbg ${CFLAGSDBG} 
+
+./ch04/01_talkback/talkback: ${CH04SRC01}
+	gcc -s $(CFLAGS) ${CH04SRC01} -o ${CH04DST01} 
+
+./ch04/01_talkback/talkback_dbg: ${CH04SRC01}
+	tcc -g ${CH04SRC01} -o ${CH04DST01}_dbg ${CFLAGSDBG} 
 
 
