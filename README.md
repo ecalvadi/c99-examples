@@ -62,11 +62,13 @@ The binary are saved on "bin" folder. To run type in the console the following e
 
 This repository are divided in Chapters (`chxx`), the chapters are:
 
-ch01 - Gettin Started
+Ch01 - Gettin Started
 
-ch02 - Introducction
+Ch02 - Introducction
 
 Ch03 - Data
+
+Ch04 - Strings and Input/Output
 
 ... more soon.
 
