@@ -114,6 +114,10 @@ CH04DST01=./bin/CH04_01_Talkback
 CH04SRC02=./src/ch04/02_praisel/praisel.c
 CH04DST02=./bin/CH04_02_Praisel
 
+#data for CH04_03 example
+CH04SRC03=./src/ch04/03_praise2/praise2.c
+CH04DST03=./bin/CH04_03_Praise2
+
 
 
 default: debug
@@ -139,7 +143,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch03/11_badcount/badcount \
 		./ch03/12_escape/escape \
 		./ch04/01_talkback/talkback \
-		./ch04/02_praisel/praisel
+		./ch04/02_praisel/praisel \
+		./ch04/03_praise2/praise2
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -160,7 +165,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch03/11_badcount/badcount_dbg \
 		./ch03/12_escape/escape_dbg \
 		./ch04/01_talkback/talkback_dbg \
-		./ch04/02_praisel/praisel_dbg
+		./ch04/02_praisel/praisel_dbg \
+		./ch04/03_praise2/praise2_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -284,5 +290,11 @@ clean:
 
 ./ch04/02_praisel/praisel_dbg: ${CH04SRC02}
 	tcc -g ${CH04SRC02} -o ${CH04DST02}_dbg ${CFLAGSDBG} 
+
+./ch04/03_praise2/praise2: ${CH04SRC03}
+	gcc -s $(CFLAGS) ${CH04SRC03} -o ${CH04DST03} 
+
+./ch04/03_praise2/praise2_dbg: ${CH04SRC03}
+	tcc -g ${CH04SRC03} -o ${CH04DST03}_dbg ${CFLAGSDBG} 
 
 
