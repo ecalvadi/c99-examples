@@ -118,9 +118,13 @@ CH04DST02=./bin/CH04_02_Praisel
 CH04SRC03=./src/ch04/03_praise2/praise2.c
 CH04DST03=./bin/CH04_03_Praise2
 
-#data for CH04_03 example
+#data for CH04_04 example
 CH04SRC04=./src/ch04/04_pizza/pizza.c
 CH04DST04=./bin/CH04_04_Pizza
+
+#data for CH04_05 example
+CH04SRC05=./src/ch04/05_defines/defines.c
+CH04DST05=./bin/CH04_05_Defines
 
 default: debug
 
@@ -147,7 +151,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch04/01_talkback/talkback \
 		./ch04/02_praisel/praisel \
 		./ch04/03_praise2/praise2 \
-		./ch04/04_pizza/pizza
+		./ch04/04_pizza/pizza \
+		./ch04/05_defines/defines
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -170,7 +175,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch04/01_talkback/talkback_dbg \
 		./ch04/02_praisel/praisel_dbg \
 		./ch04/03_praise2/praise2_dbg \
-		./ch04/04_pizza/pizza_dbg
+		./ch04/04_pizza/pizza_dbg \
+		./ch04/05_defines/defines_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -306,5 +312,11 @@ clean:
 
 ./ch04/04_pizza/pizza_dbg: ${CH04SRC04}
 	tcc -g ${CH04SRC04} -o ${CH04DST04}_dbg ${CFLAGSDBG} 
+
+./ch04/05_defines/defines: ${CH04SRC05}
+	gcc -s $(CFLAGS) ${CH04SRC05} -o ${CH04DST05} 
+
+./ch04/05_defines/defines_dbg: ${CH04SRC05}
+	tcc -g ${CH04SRC05} -o ${CH04DST05}_dbg ${CFLAGSDBG} 
 
 
