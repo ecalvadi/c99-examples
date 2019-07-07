@@ -146,7 +146,9 @@ CH04DST09=./bin/CH04_09_Flags
 CH04SRC10=./src/ch04/10_stringf/stringf.c
 CH04DST10=./bin/CH04_10_Stringf
 
-
+#data for CH04_11 example
+CH04SRC11=./src/ch04/11_intconv/intconv.c
+CH04DST11=./bin/CH04_11_Intconv
 
 default: debug
 
@@ -179,7 +181,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch04/07_width/width \
 		./ch04/08_floats/floats \
 		./ch04/09_flags/flags \
-		./ch04/10_stringf/stringf
+		./ch04/10_stringf/stringf \
+		./ch04/11_intconv/intconv
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -208,7 +211,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch04/07_width/width_dbg \
 		./ch04/08_floats/floats_dbg \
 		./ch04/09_flags/flags_dbg \
-		./ch04/10_stringf/stringf_dbg
+		./ch04/10_stringf/stringf_dbg \
+		./ch04/11_intconv/intconv_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -380,5 +384,11 @@ clean:
 
 ./ch04/10_stringf/stringf_dbg: ${CH04SRC10}
 	tcc -g ${CH04SRC10} -o ${CH04DST10}_dbg ${CFLAGSDBG} 
+
+./ch04/11_intconv/intconv: ${CH04SRC11}
+	gcc -s $(CFLAGS) ${CH04SRC11} -o ${CH04DST11} 
+
+./ch04/11_intconv/intconv_dbg: ${CH04SRC11}
+	tcc -g ${CH04SRC11} -o ${CH04DST11}_dbg ${CFLAGSDBG} 
 
 
