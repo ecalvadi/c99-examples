@@ -138,6 +138,11 @@ CH04DST07=./bin/CH04_07_Width
 CH04SRC08=./src/ch04/08_floats/floats.c
 CH04DST08=./bin/CH04_08_Floats
 
+#data for CH04_09 example
+CH04SRC09=./src/ch04/09_flags/flags.c
+CH04DST09=./bin/CH04_09_Flags
+
+
 default: debug
 
 all: release
@@ -167,7 +172,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch04/05_defines/defines \
 		./ch04/06_printout/printout \
 		./ch04/07_width/width \
-		./ch04/08_floats/floats
+		./ch04/08_floats/floats \
+		./ch04/09_flags/flags
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -194,7 +200,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch04/05_defines/defines_dbg \
 		./ch04/06_printout/printout_dbg \
 		./ch04/07_width/width_dbg \
-		./ch04/08_floats/floats_dbg
+		./ch04/08_floats/floats_dbg \
+		./ch04/09_flags/flags_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -354,5 +361,11 @@ clean:
 
 ./ch04/08_floats/floats_dbg: ${CH04SRC08}
 	tcc -g ${CH04SRC08} -o ${CH04DST08}_dbg ${CFLAGSDBG} 
+
+./ch04/09_flags/flags: ${CH04SRC09}
+	gcc -s $(CFLAGS) ${CH04SRC09} -o ${CH04DST09} 
+
+./ch04/09_flags/flags_dbg: ${CH04SRC09}
+	tcc -g ${CH04SRC09} -o ${CH04DST09}_dbg ${CFLAGSDBG} 
 
 

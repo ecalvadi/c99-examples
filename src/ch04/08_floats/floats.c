@@ -1,4 +1,4 @@
-/*floats.c -- some floating-point combinatios*/
+/*floats.c -- some floating-point combinations*/
 #include <stdio.h>
 
 int main(void)
