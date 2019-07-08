@@ -150,9 +150,13 @@ CH04DST10=./bin/CH04_10_Stringf
 CH04SRC11=./src/ch04/11_intconv/intconv.c
 CH04DST11=./bin/CH04_11_Intconv
 
-#data for CH04_11 example
+#data for CH04_12 example
 CH04SRC12=./src/ch04/12_floatconv/floatconv.c
 CH04DST12=./bin/CH04_12_Floatconv
+
+#data for CH04_13 example
+CH04SRC13=./src/ch04/13_printval/printval.c
+CH04DST13=./bin/CH04_13_Printval
 
 default: debug
 
@@ -187,7 +191,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch04/09_flags/flags \
 		./ch04/10_stringf/stringf \
 		./ch04/11_intconv/intconv \
-		./ch04/12_floatconv/floatconv
+		./ch04/12_floatconv/floatconv \
+		./ch04/13_printval/printval
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -218,7 +223,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch04/09_flags/flags_dbg \
 		./ch04/10_stringf/stringf_dbg \
 		./ch04/11_intconv/intconv_dbg \
-		./ch04/12_floatconv/floatconv_dbg
+		./ch04/12_floatconv/floatconv_dbg \
+		./ch04/13_printval/printval_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -402,4 +408,10 @@ clean:
 
 ./ch04/12_floatconv/floatconv_dbg: ${CH04SRC12}
 	tcc -g ${CH04SRC12} -o ${CH04DST12}_dbg ${CFLAGSDBG} 
+
+./ch04/13_printval/printval: ${CH04SRC13}
+	gcc -s $(CFLAGS) ${CH04SRC13} -o ${CH04DST13} 
+
+./ch04/13_printval/printval_dbg: ${CH04SRC13}
+	tcc -g ${CH04SRC13} -o ${CH04DST13}_dbg ${CFLAGSDBG} 
 
