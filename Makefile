@@ -166,6 +166,9 @@ CH04DST14=./bin/CH04_14_Longstrg
 CH04SRC15=./src/ch04/15_input/input.c
 CH04DST15=./bin/CH04_15_Input
 
+#data for CH04_16 example
+CH04SRC16=./src/ch04/16_varwid/varwid.c
+CH04DST16=./bin/CH04_16_Varwid
 
 default: debug
 
@@ -203,7 +206,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch04/12_floatconv/floatconv \
 		./ch04/13_printval/printval \
 		./ch04/14_longstrg/longstrg \
-		./ch04/15_input/input
+		./ch04/15_input/input \
+		./ch04/16_varwid/varwid
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -237,7 +241,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch04/12_floatconv/floatconv_dbg \
 		./ch04/13_printval/printval_dbg \
 		./ch04/14_longstrg/longstrg_dbg \
-		./ch04/15_input/input_dbg
+		./ch04/15_input/input_dbg \
+		./ch04/16_varwid/varwid_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -439,4 +444,10 @@ clean:
 
 ./ch04/15_input/input_dbg: ${CH04SRC15}
 	tcc -g ${CH04SRC15} -o ${CH04DST15}_dbg ${CFLAGSDBG} 
+
+./ch04/16_varwid/varwid: ${CH04SRC16}
+	gcc -s $(CFLAGS) ${CH04SRC16} -o ${CH04DST16} 
+
+./ch04/16_varwid/varwid_dbg: ${CH04SRC16}
+	tcc -g ${CH04SRC16} -o ${CH04DST16}_dbg ${CFLAGSDBG} 
 
