@@ -1,4 +1,4 @@
-/*vawid.c -- uses variable-width output field*/
+/*varwid.c -- uses variable-width output field*/
 #include <stdio.h>
 
 int main(void)

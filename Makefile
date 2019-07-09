@@ -170,6 +170,11 @@ CH04DST15=./bin/CH04_15_Input
 CH04SRC16=./src/ch04/16_varwid/varwid.c
 CH04DST16=./bin/CH04_16_Varwid
 
+#data for CH04_17 example
+CH04SRC17=./src/ch04/17_skip2/skip2.c
+CH04DST17=./bin/CH04_17_Skip2
+
+
 default: debug
 
 all: release
@@ -207,7 +212,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch04/13_printval/printval \
 		./ch04/14_longstrg/longstrg \
 		./ch04/15_input/input \
-		./ch04/16_varwid/varwid
+		./ch04/16_varwid/varwid \
+		./ch04/17_skip2/skip2
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -242,7 +248,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch04/13_printval/printval_dbg \
 		./ch04/14_longstrg/longstrg_dbg \
 		./ch04/15_input/input_dbg \
-		./ch04/16_varwid/varwid_dbg
+		./ch04/16_varwid/varwid_dbg \
+		./ch04/17_skip2/skip2_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -450,4 +457,10 @@ clean:
 
 ./ch04/16_varwid/varwid_dbg: ${CH04SRC16}
 	tcc -g ${CH04SRC16} -o ${CH04DST16}_dbg ${CFLAGSDBG} 
+
+./ch04/17_skip2/skip2: ${CH04SRC17}
+	gcc -s $(CFLAGS) ${CH04SRC17} -o ${CH04DST17} 
+
+./ch04/17_skip2/skip2_dbg: ${CH04SRC17}
+	tcc -g ${CH04SRC17} -o ${CH04DST17}_dbg ${CFLAGSDBG} 
 
