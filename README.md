@@ -70,6 +70,8 @@ Ch03 - Data
 
 Ch04 - Strings and Input/Output
 
+Ch05 - Operators, expressions, statements
+
 ... more soon.
 
 Please, send me an email to improve this repository: hector@eclipsedpixel.com 
