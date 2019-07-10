@@ -178,6 +178,10 @@ CH04DST17=./bin/CH04_17_Skip2
 CH05SRC01=./src/ch05/01_shoes1/shoes1.c
 CH05DST01=./bin/CH05_01_Shoes1
 
+#data for CH05_02 example
+CH05SRC02=./src/ch05/02_shoes2/shoes2.c
+CH05DST02=./bin/CH05_02_Shoes2
+
 default: debug
 
 all: release
@@ -217,7 +221,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch04/15_input/input \
 		./ch04/16_varwid/varwid \
 		./ch04/17_skip2/skip2 \
-		./ch05/01_shoes1/shoes1
+		./ch05/01_shoes1/shoes1 \
+		./ch05/02_shoes2/shoes2
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -254,7 +259,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch04/15_input/input_dbg \
 		./ch04/16_varwid/varwid_dbg \
 		./ch04/17_skip2/skip2_dbg \
-		./ch05/01_shoes1/shoes1_dbg
+		./ch05/01_shoes1/shoes1_dbg \
+		./ch05/02_shoes2/shoes2_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -474,4 +480,10 @@ clean:
 
 ./ch05/01_shoes1/shoes1_dbg: ${CH05SRC01}
 	tcc -g ${CH05SRC01} -o ${CH05DST01}_dbg ${CFLAGSDBG} 
+
+./ch05/02_shoes2/shoes2: ${CH05SRC02}
+	gcc -s $(CFLAGS) ${CH05SRC02} -o ${CH05DST02} 
+
+./ch05/02_shoes2/shoes2_dbg: ${CH05SRC02}
+	tcc -g ${CH05SRC02} -o ${CH05DST02}_dbg ${CFLAGSDBG} 
 
