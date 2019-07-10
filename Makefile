@@ -7,7 +7,7 @@
 #if CPU architecture = RaspberryPi 1/Zero
 ifeq ($(shell uname -m),armv6l)
 
-CFLAGS+=-Os -mcpu=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp -mtune=arm1176jzf-s 
+CFLAGS+=-Os -mcpu=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp -mtune=arm1176jzf-s -w
 
 CFLAGSDBG=-w
 
@@ -15,20 +15,20 @@ CFLAGSDBG=-w
 else ifeq ($(shell uname -m),armv7l)
 	#if CPU = Raspberry 3
 	ifeq ($(shell lscpu | grep Model: | cut -c24),4)
-		CFLAGS+=-Os -mcpu=cortex-a53 -mfloat-abi=hard -mfpu=neon-fp-armv8 -mneon-for-64bits -mtune=cortex-a53 
+		CFLAGS+=-Os -mcpu=cortex-a53 -mfloat-abi=hard -mfpu=neon-fp-armv8 -mneon-for-64bits -mtune=cortex-a53 -w
 
 		CFLAGSDBG=-w
 
 	#this is for Raspberry 2
 	else
-		CFLAGS+=-Os -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4 -mtune=cortex-a7 
+		CFLAGS+=-Os -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4 -mtune=cortex-a7 -w
 		CFLAGSDBG=-w
 	endif
 
 #if else (this is for any PC)
 else
 
-CFLAGS+=-O2 -march=native -mtune=native 
+CFLAGS+=-O2 -march=native -mtune=native -w
 
 CFLAGSDBG= 
 
@@ -174,6 +174,9 @@ CH04DST16=./bin/CH04_16_Varwid
 CH04SRC17=./src/ch04/17_skip2/skip2.c
 CH04DST17=./bin/CH04_17_Skip2
 
+#data for CH05_01 example
+CH05SRC01=./src/ch05/01_shoes1/shoes1.c
+CH05DST01=./bin/CH05_01_Shoes1
 
 default: debug
 
@@ -213,7 +216,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch04/14_longstrg/longstrg \
 		./ch04/15_input/input \
 		./ch04/16_varwid/varwid \
-		./ch04/17_skip2/skip2
+		./ch04/17_skip2/skip2 \
+		./ch05/01_shoes1/shoes1
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -249,7 +253,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch04/14_longstrg/longstrg_dbg \
 		./ch04/15_input/input_dbg \
 		./ch04/16_varwid/varwid_dbg \
-		./ch04/17_skip2/skip2_dbg
+		./ch04/17_skip2/skip2_dbg \
+		./ch05/01_shoes1/shoes1_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -463,4 +468,10 @@ clean:
 
 ./ch04/17_skip2/skip2_dbg: ${CH04SRC17}
 	tcc -g ${CH04SRC17} -o ${CH04DST17}_dbg ${CFLAGSDBG} 
+
+./ch05/01_shoes1/shoes1: ${CH05SRC01}
+	gcc -s $(CFLAGS) ${CH05SRC01} -o ${CH05DST01} 
+
+./ch05/01_shoes1/shoes1_dbg: ${CH05SRC01}
+	tcc -g ${CH05SRC01} -o ${CH05DST01}_dbg ${CFLAGSDBG} 
 
