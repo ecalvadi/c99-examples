@@ -190,6 +190,10 @@ CH05DST03=./bin/CH05_03_Golf
 CH05SRC04=./src/ch05/04_squares/squares.c
 CH05DST04=./bin/CH05_04_Squares
 
+#data for CH05_05 example
+CH05SRC05=./src/ch05/05_wheat/wheat.c
+CH05DST05=./bin/CH05_05_Wheat
+
 default: debug
 
 all: release
@@ -232,7 +236,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch05/01_shoes1/shoes1 \
 		./ch05/02_shoes2/shoes2 \
 		./ch05/03_golf/golf \
-		./ch05/04_squares/squares
+		./ch05/04_squares/squares \
+		./ch05/05_wheat/wheat
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -272,7 +277,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch05/01_shoes1/shoes1_dbg \
 		./ch05/02_shoes2/shoes2_dbg \
 		./ch05/03_golf/golf_dbg \
-		./ch05/04_squares/squares_dbg
+		./ch05/04_squares/squares_dbg \
+		./ch05/05_wheat/wheat_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -505,10 +511,16 @@ clean:
 ./ch05/03_golf/golf_dbg: ${CH05SRC03}
 	tcc -g ${CH05SRC03} -o ${CH05DST03}_dbg ${CFLAGSDBG} 
 
-
 ./ch05/04_squares/squares: ${CH05SRC04}
 	gcc -s $(CFLAGS) ${CH05SRC04} -o ${CH05DST04} 
 
 ./ch05/04_squares/squares_dbg: ${CH05SRC04}
 	tcc -g ${CH05SRC04} -o ${CH05DST04}_dbg ${CFLAGSDBG} 
+
+./ch05/05_wheat/wheat: ${CH05SRC05}
+	gcc -s $(CFLAGS) ${CH05SRC05} -o ${CH05DST05} 
+
+./ch05/05_wheat/wheat_dbg: ${CH05SRC05}
+	tcc -g ${CH05SRC05} -o ${CH05DST05}_dbg ${CFLAGSDBG} 
+
 
