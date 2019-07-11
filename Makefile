@@ -269,221 +269,221 @@ clean:
 	gcc -s $(CFLAGS) ${CH01SRC01} -o ${CH01DST01} 
 
 ./ch01/01_hello_world/hello_world_dbg: ${CH01SRC01}
-	tcc -b ${CH01SRC01} -o ${CH01DST01}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH01SRC01} -o ${CH01DST01}_dbg ${CFLAGSDBG} 
 
 ./ch01/02_cats/cats: ${CH01SRC02}
 	gcc -s $(CFLAGS) ${CH01SRC02} -o ${CH01DST02} 
 
 ./ch01/02_cats/cats_dbg: ${CH01SRC02}
-	tcc -b ${CH01SRC02} -o ${CH01DST02}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH01SRC02} -o ${CH01DST02}_dbg ${CFLAGSDBG} 
 
 ./ch02/01_simple_computer/simple_computer: ${CH02SRC01}
 	gcc -s $(CFLAGS) ${CH02SRC01} -o ${CH02DST01} 
 
 ./ch02/01_simple_computer/simple_computer_dbg: ${CH02SRC01}
-	tcc -b ${CH02SRC01} -o ${CH02DST01}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH02SRC01} -o ${CH02DST01}_dbg ${CFLAGSDBG} 
 
 ./ch02/02_fathoms_to_feet/fathoms_to_feet: ${CH02SRC02}
 	gcc -s $(CFLAGS) ${CH02SRC02} -o ${CH02DST02} 
 
 ./ch02/02_fathoms_to_feet/fathoms_to_feet_dbg: ${CH02SRC02}
-	tcc -b ${CH02SRC02} -o ${CH02DST02}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH02SRC02} -o ${CH02DST02}_dbg ${CFLAGSDBG} 
 
 ./ch02/03_two_func/two_func: ${CH02SRC03}
 	gcc -s $(CFLAGS) ${CH02SRC03} -o ${CH02DST03} 
 
 ./ch02/03_two_func/two_func_dbg: ${CH02SRC03}
-	tcc -b ${CH02SRC03} -o ${CH02DST03}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH02SRC03} -o ${CH02DST03}_dbg ${CFLAGSDBG} 
 
 ./ch02/04_squared_cube/squared_cube: ${CH02SRC04}
 	gcc -s $(CFLAGS) ${CH02SRC04} -o ${CH02DST04} 
 
 ./ch02/04_squared_cube/squared_cube_dbg: ${CH02SRC04}
-	tcc -b ${CH02SRC04} -o ${CH02DST04}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH02SRC04} -o ${CH02DST04}_dbg ${CFLAGSDBG} 
 
 ./ch03/01_platinium/platinium: ${CH03SRC01}
 	gcc -s $(CFLAGS) ${CH03SRC01} -o ${CH03DST01} 
 
 ./ch03/01_platinium/platinium_dbg: ${CH03SRC01}
-	tcc -b ${CH03SRC01} -o ${CH03DST01}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC01} -o ${CH03DST01}_dbg ${CFLAGSDBG} 
 
 ./ch03/02_print1/print1: ${CH03SRC02}
 	gcc -s $(CFLAGS) ${CH03SRC02} -o ${CH03DST02} 
 
 ./ch03/02_print1/print1_dbg: ${CH03SRC02}
-	tcc -b ${CH03SRC02} -o ${CH03DST02}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC02} -o ${CH03DST02}_dbg ${CFLAGSDBG} 
 
 ./ch03/03_bases/bases: ${CH03SRC03}
 	gcc -s $(CFLAGS) ${CH03SRC03} -o ${CH03DST03} 
 
 ./ch03/03_bases/bases_dbg: ${CH03SRC03}
-	tcc -b ${CH03SRC03} -o ${CH03DST03}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC03} -o ${CH03DST03}_dbg ${CFLAGSDBG} 
 
 ./ch03/04_toobig/toobig: ${CH03SRC04}
 	gcc -s $(CFLAGS) ${CH03SRC04} -o ${CH03DST04} 
 
 ./ch03/04_toobig/toobig_dbg: ${CH03SRC04}
-	tcc -b ${CH03SRC04} -o ${CH03DST04}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC04} -o ${CH03DST04}_dbg ${CFLAGSDBG} 
 
 ./ch03/05_integers/integers: ${CH03SRC05}
 	gcc -s $(CFLAGS) ${CH03SRC05} -o ${CH03DST05} 
 
 ./ch03/05_integers/integers_dbg: ${CH03SRC05}
-	tcc -b ${CH03SRC05} -o ${CH03DST05}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC05} -o ${CH03DST05}_dbg ${CFLAGSDBG} 
 
 ./ch03/06_charcode/charcode: ${CH03SRC06}
 	gcc -s $(CFLAGS) ${CH03SRC06} -o ${CH03DST06} 
 
 ./ch03/06_charcode/charcode_dbg: ${CH03SRC06}
-	tcc -b ${CH03SRC06} -o ${CH03DST06}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC06} -o ${CH03DST06}_dbg ${CFLAGSDBG} 
 
 ./ch03/07_altnames/altnames: ${CH03SRC07}
 	gcc -s $(CFLAGS) ${CH03SRC07} -o ${CH03DST07} 
 
 ./ch03/07_altnames/altnames_dbg: ${CH03SRC07}
-	tcc -b ${CH03SRC07} -o ${CH03DST07}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC07} -o ${CH03DST07}_dbg ${CFLAGSDBG} 
 
 ./ch03/08_showfloat/showfloat: ${CH03SRC08}
 	gcc -s $(CFLAGS) ${CH03SRC08} -o ${CH03DST08} 
 
 ./ch03/08_showfloat/showfloat_dbg: ${CH03SRC08}
-	tcc -b ${CH03SRC08} -o ${CH03DST08}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC08} -o ${CH03DST08}_dbg ${CFLAGSDBG} 
 
 ./ch03/09_floaterr/floaterr: ${CH03SRC09}
 	gcc -s $(CFLAGS) ${CH03SRC09} -o ${CH03DST09} 
 
 ./ch03/09_floaterr/floaterr_dbg: ${CH03SRC09}
-	tcc -b ${CH03SRC09} -o ${CH03DST09}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC09} -o ${CH03DST09}_dbg ${CFLAGSDBG} 
 
 ./ch03/10_typesize/typesize: ${CH03SRC10}
 	gcc -s $(CFLAGS) ${CH03SRC10} -o ${CH03DST10} 
 
 ./ch03/10_typesize/typesize_dbg: ${CH03SRC10}
-	tcc -b ${CH03SRC10} -o ${CH03DST10}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC10} -o ${CH03DST10}_dbg ${CFLAGSDBG} 
 
 ./ch03/11_badcount/badcount: ${CH03SRC11}
 	gcc -s $(CFLAGS) ${CH03SRC11} -o ${CH03DST11} 
 
 ./ch03/11_badcount/badcount_dbg: ${CH03SRC11}
-	tcc -b ${CH03SRC11} -o ${CH03DST11}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC11} -o ${CH03DST11}_dbg ${CFLAGSDBG} 
 
 ./ch03/12_escape/escape: ${CH03SRC12}
 	gcc -s $(CFLAGS) ${CH03SRC12} -o ${CH03DST12} 
 
 ./ch03/12_escape/escape_dbg: ${CH03SRC12}
-	tcc -b ${CH03SRC12} -o ${CH03DST12}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH03SRC12} -o ${CH03DST12}_dbg ${CFLAGSDBG} 
 
 ./ch04/01_talkback/talkback: ${CH04SRC01}
 	gcc -s $(CFLAGS) ${CH04SRC01} -o ${CH04DST01} 
 
 ./ch04/01_talkback/talkback_dbg: ${CH04SRC01}
-	tcc -b ${CH04SRC01} -o ${CH04DST01}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC01} -o ${CH04DST01}_dbg ${CFLAGSDBG} 
 
 ./ch04/02_praisel/praisel: ${CH04SRC02}
 	gcc -s $(CFLAGS) ${CH04SRC02} -o ${CH04DST02} 
 
 ./ch04/02_praisel/praisel_dbg: ${CH04SRC02}
-	tcc -b ${CH04SRC02} -o ${CH04DST02}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC02} -o ${CH04DST02}_dbg ${CFLAGSDBG} 
 
 ./ch04/03_praise2/praise2: ${CH04SRC03}
 	gcc -s $(CFLAGS) ${CH04SRC03} -o ${CH04DST03} 
 
 ./ch04/03_praise2/praise2_dbg: ${CH04SRC03}
-	tcc -b ${CH04SRC03} -o ${CH04DST03}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC03} -o ${CH04DST03}_dbg ${CFLAGSDBG} 
 
 ./ch04/04_pizza/pizza: ${CH04SRC04}
 	gcc -s $(CFLAGS) ${CH04SRC04} -o ${CH04DST04} 
 
 ./ch04/04_pizza/pizza_dbg: ${CH04SRC04}
-	tcc -b ${CH04SRC04} -o ${CH04DST04}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC04} -o ${CH04DST04}_dbg ${CFLAGSDBG} 
 
 ./ch04/05_defines/defines: ${CH04SRC05}
 	gcc -s $(CFLAGS) ${CH04SRC05} -o ${CH04DST05} 
 
 ./ch04/05_defines/defines_dbg: ${CH04SRC05}
-	tcc -b ${CH04SRC05} -o ${CH04DST05}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC05} -o ${CH04DST05}_dbg ${CFLAGSDBG} 
 
 ./ch04/06_printout/printout: ${CH04SRC06}
 	gcc -s $(CFLAGS) ${CH04SRC06} -o ${CH04DST06} 
 
 ./ch04/06_printout/printout_dbg: ${CH04SRC06}
-	tcc -b ${CH04SRC06} -o ${CH04DST06}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC06} -o ${CH04DST06}_dbg ${CFLAGSDBG} 
 
 ./ch04/07_width/width: ${CH04SRC07}
 	gcc -s $(CFLAGS) ${CH04SRC07} -o ${CH04DST07} 
 
 ./ch04/07_width/width_dbg: ${CH04SRC07}
-	tcc -b ${CH04SRC07} -o ${CH04DST07}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC07} -o ${CH04DST07}_dbg ${CFLAGSDBG} 
 
 ./ch04/08_floats/floats: ${CH04SRC08}
 	gcc -s $(CFLAGS) ${CH04SRC08} -o ${CH04DST08} 
 
 ./ch04/08_floats/floats_dbg: ${CH04SRC08}
-	tcc -b ${CH04SRC08} -o ${CH04DST08}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC08} -o ${CH04DST08}_dbg ${CFLAGSDBG} 
 
 ./ch04/09_flags/flags: ${CH04SRC09}
 	gcc -s $(CFLAGS) ${CH04SRC09} -o ${CH04DST09} 
 
 ./ch04/09_flags/flags_dbg: ${CH04SRC09}
-	tcc -b ${CH04SRC09} -o ${CH04DST09}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC09} -o ${CH04DST09}_dbg ${CFLAGSDBG} 
 
 ./ch04/10_stringf/stringf: ${CH04SRC10}
 	gcc -s $(CFLAGS) ${CH04SRC10} -o ${CH04DST10} 
 
 ./ch04/10_stringf/stringf_dbg: ${CH04SRC10}
-	tcc -b ${CH04SRC10} -o ${CH04DST10}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC10} -o ${CH04DST10}_dbg ${CFLAGSDBG} 
 
 ./ch04/11_intconv/intconv: ${CH04SRC11}
 	gcc -s $(CFLAGS) ${CH04SRC11} -o ${CH04DST11} 
 
 ./ch04/11_intconv/intconv_dbg: ${CH04SRC11}
-	tcc -b ${CH04SRC11} -o ${CH04DST11}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC11} -o ${CH04DST11}_dbg ${CFLAGSDBG} 
 
 ./ch04/12_floatconv/floatconv: ${CH04SRC12}
 	gcc -s $(CFLAGS) ${CH04SRC12} -o ${CH04DST12} 
 
 ./ch04/12_floatconv/floatconv_dbg: ${CH04SRC12}
-	tcc -b ${CH04SRC12} -o ${CH04DST12}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC12} -o ${CH04DST12}_dbg ${CFLAGSDBG} 
 
 ./ch04/13_printval/printval: ${CH04SRC13}
 	gcc -s $(CFLAGS) ${CH04SRC13} -o ${CH04DST13} 
 
 ./ch04/13_printval/printval_dbg: ${CH04SRC13}
-	tcc -b ${CH04SRC13} -o ${CH04DST13}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC13} -o ${CH04DST13}_dbg ${CFLAGSDBG} 
 
 ./ch04/14_longstrg/longstrg: ${CH04SRC14}
 	gcc -s $(CFLAGS) ${CH04SRC14} -o ${CH04DST14} 
 
 ./ch04/14_longstrg/longstrg_dbg: ${CH04SRC14}
-	tcc -b ${CH04SRC14} -o ${CH04DST14}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC14} -o ${CH04DST14}_dbg ${CFLAGSDBG} 
 
 ./ch04/15_input/input: ${CH04SRC15}
 	gcc -s $(CFLAGS) ${CH04SRC15} -o ${CH04DST15} 
 
 ./ch04/15_input/input_dbg: ${CH04SRC15}
-	tcc -b ${CH04SRC15} -o ${CH04DST15}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC15} -o ${CH04DST15}_dbg ${CFLAGSDBG} 
 
 ./ch04/16_varwid/varwid: ${CH04SRC16}
 	gcc -s $(CFLAGS) ${CH04SRC16} -o ${CH04DST16} 
 
 ./ch04/16_varwid/varwid_dbg: ${CH04SRC16}
-	tcc -b ${CH04SRC16} -o ${CH04DST16}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC16} -o ${CH04DST16}_dbg ${CFLAGSDBG} 
 
 ./ch04/17_skip2/skip2: ${CH04SRC17}
 	gcc -s $(CFLAGS) ${CH04SRC17} -o ${CH04DST17} 
 
 ./ch04/17_skip2/skip2_dbg: ${CH04SRC17}
-	tcc -b ${CH04SRC17} -o ${CH04DST17}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH04SRC17} -o ${CH04DST17}_dbg ${CFLAGSDBG} 
 
 ./ch05/01_shoes1/shoes1: ${CH05SRC01}
 	gcc -s $(CFLAGS) ${CH05SRC01} -o ${CH05DST01} 
 
 ./ch05/01_shoes1/shoes1_dbg: ${CH05SRC01}
-	tcc -b ${CH05SRC01} -o ${CH05DST01}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH05SRC01} -o ${CH05DST01}_dbg ${CFLAGSDBG} 
 
 ./ch05/02_shoes2/shoes2: ${CH05SRC02}
 	gcc -s $(CFLAGS) ${CH05SRC02} -o ${CH05DST02} 
 
 ./ch05/02_shoes2/shoes2_dbg: ${CH05SRC02}
-	tcc -b ${CH05SRC02} -o ${CH05DST02}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH05SRC02} -o ${CH05DST02}_dbg ${CFLAGSDBG} 
 
