@@ -3,7 +3,8 @@
 
 #define ADJUST 7.31                 /*one kind of symbolic constant*/
 
-int main(void){
+int main(void)
+{
     const double SCALE = 0.333;     /*another kind of symbolic constant*/
     
     double shoe, foot;
