@@ -198,6 +198,10 @@ CH05DST05=./bin/CH05_05_Wheat
 CH05SRC06=./src/ch05/06_divide/divide.c
 CH05DST06=./bin/CH05_06_Divide
 
+#data for CH05_07 example
+CH05SRC07=./src/ch05/07_rules/rules.c
+CH05DST07=./bin/CH05_07_Rules
+
 default: debug
 
 all: release
@@ -242,7 +246,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch05/03_golf/golf \
 		./ch05/04_squares/squares \
 		./ch05/05_wheat/wheat \
-		./ch05/06_divide/divide
+		./ch05/06_divide/divide \
+		./ch05/07_rules/rules
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -284,7 +289,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch05/03_golf/golf_dbg \
 		./ch05/04_squares/squares_dbg \
 		./ch05/05_wheat/wheat_dbg \
-		./ch05/06_divide/divide_dbg
+		./ch05/06_divide/divide_dbg \
+		./ch05/07_rules/rules_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -534,3 +540,9 @@ clean:
 
 ./ch05/06_divide/divide_dbg: ${CH05SRC06}
 	tcc -g ${CH05SRC06} -o ${CH05DST06}_dbg ${CFLAGSDBG}
+
+./ch05/07_rules/rules: ${CH05SRC07}
+	gcc -s $(CFLAGS) ${CH05SRC07} -o ${CH05DST07} 
+
+./ch05/07_rules/rules_dbg: ${CH05SRC07}
+	tcc -g ${CH05SRC07} -o ${CH05DST07}_dbg ${CFLAGSDBG}
