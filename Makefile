@@ -202,6 +202,10 @@ CH05DST06=./bin/CH05_06_Divide
 CH05SRC07=./src/ch05/07_rules/rules.c
 CH05DST07=./bin/CH05_07_Rules
 
+#data for CH05_08 example
+CH05SRC08=./src/ch05/08_sizeof/sizeof.c
+CH05DST08=./bin/CH05_08_Sizeof
+
 default: debug
 
 all: release
@@ -247,7 +251,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch05/04_squares/squares \
 		./ch05/05_wheat/wheat \
 		./ch05/06_divide/divide \
-		./ch05/07_rules/rules
+		./ch05/07_rules/rules \
+		./ch05/08_sizeof/sizeof
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -290,7 +295,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch05/04_squares/squares_dbg \
 		./ch05/05_wheat/wheat_dbg \
 		./ch05/06_divide/divide_dbg \
-		./ch05/07_rules/rules_dbg
+		./ch05/07_rules/rules_dbg \
+		./ch05/08_sizeof/sizeof_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -546,3 +552,9 @@ clean:
 
 ./ch05/07_rules/rules_dbg: ${CH05SRC07}
 	tcc -g ${CH05SRC07} -o ${CH05DST07}_dbg ${CFLAGSDBG}
+
+./ch05/08_sizeof/sizeof: ${CH05SRC08}
+	gcc -s $(CFLAGS) ${CH05SRC08} -o ${CH05DST08} 
+
+./ch05/08_sizeof/sizeof_dbg: ${CH05SRC08}
+	tcc -g ${CH05SRC08} -o ${CH05DST08}_dbg ${CFLAGSDBG}
