@@ -178,6 +178,9 @@ CH05DST11=./bin/CH05_11_Postpre
 CH05SRC12=./src/ch05/12_bottles/bottles.c
 CH05DST12=./bin/CH05_12_Bottles
 
+CH05SRC13=./src/ch05/13_addemup/addemup.c
+CH05DST13=./bin/CH05_13_Addemup
+
 default: debug
 
 all: release
@@ -296,6 +299,7 @@ ch05:
 	gcc -s $(CFLAGS) ${CH05SRC10} -o ${CH05DST10}
 	gcc -s $(CFLAGS) ${CH05SRC11} -o ${CH05DST11}
 	gcc -s $(CFLAGS) ${CH05SRC12} -o ${CH05DST12}
+	gcc -s $(CFLAGS) ${CH05SRC13} -o ${CH05DST13}
 
 ch05_dbg:
 	tcc -g ${CH05SRC01} -o ${CH05DST01}_dbg ${CFLAGSDBG}
@@ -310,5 +314,6 @@ ch05_dbg:
 	tcc -g ${CH05SRC10} -o ${CH05DST10}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC11} -o ${CH05DST11}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC12} -o ${CH05DST12}_dbg ${CFLAGSDBG}
+	tcc -g ${CH05SRC13} -o ${CH05DST13}_dbg ${CFLAGSDBG}
 
 
