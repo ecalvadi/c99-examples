@@ -184,46 +184,49 @@ CH05DST13=./bin/CH05_13_Addemup
 CH05SRC14=./src/ch05/14_convert/convert.c
 CH05DST14=./bin/CH05_14_Convert
 
+CH05SRC15=./src/ch05/15_pound/pound.c
+CH05DST15=./bin/CH05_15_Pound
+
 default: debug
 
 all: release
 
-release: ch01 \
-		 ch02 \
-		 ch03 \
-		 ch04 \
-		 ch05
+release: ch01_rel \
+		 ch02_rel \
+		 ch03_rel \
+		 ch04_rel \
+		 ch05_rel
 
-debug:  ch01_dbg \
-		ch02_dbg \
-		ch03_dbg \
-		ch04_dbg \
-		ch05_dbg
+debug:  ch01 \
+		ch02 \
+		ch03 \
+		ch04 \
+		ch05
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
 
-ch01:
+ch01_rel:
 	gcc -s $(CFLAGS) ${CH01SRC01} -o ${CH01DST01}
 	gcc -s $(CFLAGS) ${CH01SRC02} -o ${CH01DST02} 
 
-ch01_dbg:
+ch01:
 	tcc -g ${CH01SRC01} -o ${CH01DST01}_dbg ${CFLAGSDBG} 
 	tcc -g ${CH01SRC02} -o ${CH01DST02}_dbg ${CFLAGSDBG}
 
-ch02:
+ch02_rel:
 	gcc -s $(CFLAGS) ${CH02SRC01} -o ${CH02DST01}
 	gcc -s $(CFLAGS) ${CH02SRC02} -o ${CH02DST02}
 	gcc -s $(CFLAGS) ${CH02SRC03} -o ${CH02DST03}
 	gcc -s $(CFLAGS) ${CH02SRC04} -o ${CH02DST04}
 
-ch02_dbg: ${CH02SRC01}
+ch02:
 	tcc -g ${CH02SRC01} -o ${CH02DST01}_dbg ${CFLAGSDBG}
 	tcc -g ${CH02SRC02} -o ${CH02DST02}_dbg ${CFLAGSDBG}
 	tcc -g ${CH02SRC03} -o ${CH02DST03}_dbg ${CFLAGSDBG}
 	tcc -g ${CH02SRC04} -o ${CH02DST04}_dbg ${CFLAGSDBG}
 
-ch03:
+ch03_rel:
 	gcc -s $(CFLAGS) ${CH03SRC01} -o ${CH03DST01}
 	gcc -s $(CFLAGS) ${CH03SRC02} -o ${CH03DST02}
 	gcc -s $(CFLAGS) ${CH03SRC03} -o ${CH03DST03}
@@ -237,7 +240,7 @@ ch03:
 	gcc -s $(CFLAGS) ${CH03SRC11} -o ${CH03DST11}
 	gcc -s $(CFLAGS) ${CH03SRC12} -o ${CH03DST12}
 
-ch03_dbg:
+ch03:
 	tcc -g ${CH03SRC01} -o ${CH03DST01}_dbg ${CFLAGSDBG}
 	tcc -g ${CH03SRC02} -o ${CH03DST02}_dbg ${CFLAGSDBG}
 	tcc -g ${CH03SRC03} -o ${CH03DST03}_dbg ${CFLAGSDBG}
@@ -251,7 +254,7 @@ ch03_dbg:
 	tcc -g ${CH03SRC11} -o ${CH03DST11}_dbg ${CFLAGSDBG}
 	tcc -g ${CH03SRC12} -o ${CH03DST12}_dbg ${CFLAGSDBG}
 
-ch04:
+ch04_rel:
 	gcc -s $(CFLAGS) ${CH04SRC01} -o ${CH04DST01}
 	gcc -s $(CFLAGS) ${CH04SRC02} -o ${CH04DST02}
 	gcc -s $(CFLAGS) ${CH04SRC03} -o ${CH04DST03}
@@ -270,7 +273,7 @@ ch04:
 	gcc -s $(CFLAGS) ${CH04SRC16} -o ${CH04DST16}
 	gcc -s $(CFLAGS) ${CH04SRC17} -o ${CH04DST17}
 
-ch04_dbg:
+ch04:
 	tcc -g ${CH04SRC01} -o ${CH04DST01}_dbg ${CFLAGSDBG}
 	tcc -g ${CH04SRC02} -o ${CH04DST02}_dbg ${CFLAGSDBG}
 	tcc -g ${CH04SRC03} -o ${CH04DST03}_dbg ${CFLAGSDBG}
@@ -289,7 +292,7 @@ ch04_dbg:
 	tcc -g ${CH04SRC16} -o ${CH04DST16}_dbg ${CFLAGSDBG}
 	tcc -g ${CH04SRC17} -o ${CH04DST17}_dbg ${CFLAGSDBG}
 
-ch05:
+ch05_rel:
 	gcc -s $(CFLAGS) ${CH05SRC01} -o ${CH05DST01}
 	gcc -s $(CFLAGS) ${CH05SRC02} -o ${CH05DST02}
 	gcc -s $(CFLAGS) ${CH05SRC03} -o ${CH05DST03}
@@ -304,8 +307,9 @@ ch05:
 	gcc -s $(CFLAGS) ${CH05SRC12} -o ${CH05DST12}
 	gcc -s $(CFLAGS) ${CH05SRC13} -o ${CH05DST13}
 	gcc -s $(CFLAGS) ${CH05SRC14} -o ${CH05DST14}
+	gcc -s $(CFLAGS) ${CH05SRC15} -o ${CH05DST15}
 
-ch05_dbg:
+ch05:
 	tcc -g ${CH05SRC01} -o ${CH05DST01}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC02} -o ${CH05DST02}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC03} -o ${CH05DST03}_dbg ${CFLAGSDBG}
@@ -320,4 +324,5 @@ ch05_dbg:
 	tcc -g ${CH05SRC12} -o ${CH05DST12}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC13} -o ${CH05DST13}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC14} -o ${CH05DST14}_dbg ${CFLAGSDBG}
+	tcc -g ${CH05SRC15} -o ${CH05DST15}_dbg ${CFLAGSDBG}
 
