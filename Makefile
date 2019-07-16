@@ -175,6 +175,9 @@ CH05DST10=./bin/CH05_10_Addone
 CH05SRC11=./src/ch05/11_postpre/postpre.c
 CH05DST11=./bin/CH05_11_Postpre
 
+CH05SRC12=./src/ch05/12_bottles/bottles.c
+CH05DST12=./bin/CH05_12_Bottles
+
 default: debug
 
 all: release
@@ -292,6 +295,7 @@ ch05:
 	gcc -s $(CFLAGS) ${CH05SRC09} -o ${CH05DST09}
 	gcc -s $(CFLAGS) ${CH05SRC10} -o ${CH05DST10}
 	gcc -s $(CFLAGS) ${CH05SRC11} -o ${CH05DST11}
+	gcc -s $(CFLAGS) ${CH05SRC12} -o ${CH05DST12}
 
 ch05_dbg:
 	tcc -g ${CH05SRC01} -o ${CH05DST01}_dbg ${CFLAGSDBG}
@@ -305,5 +309,6 @@ ch05_dbg:
 	tcc -g ${CH05SRC09} -o ${CH05DST09}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC10} -o ${CH05DST10}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC11} -o ${CH05DST11}_dbg ${CFLAGSDBG}
+	tcc -g ${CH05SRC12} -o ${CH05DST12}_dbg ${CFLAGSDBG}
 
 
