@@ -206,6 +206,10 @@ CH05DST07=./bin/CH05_07_Rules
 CH05SRC08=./src/ch05/08_sizeof/sizeof.c
 CH05DST08=./bin/CH05_08_Sizeof
 
+#data for CH05_09 example
+CH05SRC09=./src/ch05/09_minsec/minsec.c
+CH05DST09=./bin/CH05_09_Minsec
+
 default: debug
 
 all: release
@@ -252,7 +256,8 @@ release: ./ch01/01_hello_world/hello_world \
 		./ch05/05_wheat/wheat \
 		./ch05/06_divide/divide \
 		./ch05/07_rules/rules \
-		./ch05/08_sizeof/sizeof
+		./ch05/08_sizeof/sizeof \
+		./ch05/09_minsec/minsec
 
 debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch01/02_cats/cats_dbg \
@@ -296,7 +301,8 @@ debug: ./ch01/01_hello_world/hello_world_dbg \
 		./ch05/05_wheat/wheat_dbg \
 		./ch05/06_divide/divide_dbg \
 		./ch05/07_rules/rules_dbg \
-		./ch05/08_sizeof/sizeof_dbg
+		./ch05/08_sizeof/sizeof_dbg \
+		./ch05/09_minsec/minsec_dbg
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -558,3 +564,10 @@ clean:
 
 ./ch05/08_sizeof/sizeof_dbg: ${CH05SRC08}
 	tcc -g ${CH05SRC08} -o ${CH05DST08}_dbg ${CFLAGSDBG}
+
+./ch05/09_minsec/minsec: ${CH05SRC09}
+	gcc -s $(CFLAGS) ${CH05SRC09} -o ${CH05DST09} 
+
+./ch05/09_minsec/minsec_dbg: ${CH05SRC09}
+	tcc -g ${CH05SRC09} -o ${CH05DST09}_dbg ${CFLAGSDBG}
+
