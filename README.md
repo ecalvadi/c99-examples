@@ -72,6 +72,8 @@ Ch04 - Strings and Input/Output
 
 Ch05 - Operators, expressions, statements
 
+Ch06 - Looping (Control statements)
+
 ... more soon.
 
 Please, send me an email to improve this repository: hector@eclipsedpixel.com 
