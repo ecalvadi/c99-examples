@@ -187,6 +187,9 @@ CH05DST14=./bin/CH05_14_Convert
 CH05SRC15=./src/ch05/15_pound/pound.c
 CH05DST15=./bin/CH05_15_Pound
 
+CH05SRC16=./src/ch05/16_running/running.c
+CH05DST16=./bin/CH05_16_Running
+
 default: debug
 
 all: release
@@ -308,6 +311,7 @@ ch05_rel:
 	gcc -s $(CFLAGS) ${CH05SRC13} -o ${CH05DST13}
 	gcc -s $(CFLAGS) ${CH05SRC14} -o ${CH05DST14}
 	gcc -s $(CFLAGS) ${CH05SRC15} -o ${CH05DST15}
+	gcc -s $(CFLAGS) ${CH05SRC16} -o ${CH05DST16}
 
 ch05:
 	tcc -g ${CH05SRC01} -o ${CH05DST01}_dbg ${CFLAGSDBG}
@@ -325,4 +329,5 @@ ch05:
 	tcc -g ${CH05SRC13} -o ${CH05DST13}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC14} -o ${CH05DST14}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC15} -o ${CH05DST15}_dbg ${CFLAGSDBG}
+	tcc -g ${CH05SRC16} -o ${CH05DST16}_dbg ${CFLAGSDBG}
 
