@@ -26,32 +26,32 @@ int main(void)
 
     printf("Now enter the seconds.\n");
     scanf("%d", &sec);
-    
+
     /*conver time to pure seconds*/
     time = S_PER_M * min + sec;
-    
+
     /*converts kilometers to miles*/
     distm = M_PER_K * distk;
-    
+
     /*miles per sec X sec per hour = mph*/
     rate = distm / time * S_PER_H;
-    
+
     /*time/distance = time per mile*/
     mtime = (double) time / distm;
-    
+
     /*find whole minutes*/
     mmin = (int) mtime / S_PER_M;
-    
+
     /*find remaining seconds*/
     msec = (int) mtime % S_PER_M;
-    
+
     printf("You ran %1.2f km (%1.2f miles) in %d min, %d sec.\n",
         distk, distm, min, sec);
-        
+
     printf("That pace corresponds to running a mile in %d min, ",
         mmin);
     printf("%d sec.\nYour average speed was %1.2f mph.\n", msec, rate);
-    
+
     return 0;
 }
 

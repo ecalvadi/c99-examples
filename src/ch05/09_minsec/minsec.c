@@ -6,24 +6,24 @@
 int main(void)
 {
     int sec, min, left;
-    
+
     printf("Convert seconds to minutes and seconds!\n");
     printf("Enter the number of seconds (<=0 to quit):\n");
-    
+
     scanf("%d", &sec);                              /*read number of seconds*/
-    
+
     while ( sec > 0)
     {
         min = sec / SEC_PER_MIN;                    /*truncates number of minutes*/
         left = sec % SEC_PER_MIN;                   /*number of seconds left over*/
-        
+
         printf("%d seconds is %d minutes, %d seconds.\n",
             sec, min, left);
-            
+
         printf("Enter next value (<= 0 to quit):\n");
-        
+
         scanf("%d", &sec);
     }
-    
+
     return 0;
 }
