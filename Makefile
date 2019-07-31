@@ -190,6 +190,9 @@ CH05DST15=./bin/CH05_15_Pound
 CH05SRC16=./src/ch05/16_running/running.c
 CH05DST16=./bin/CH05_16_Running
 
+CH06SRC01=./src/ch06/01_summing/summing.c
+CH06DST01=./bin/CH06_01_Summing
+
 default: debug
 
 all: release
@@ -198,13 +201,15 @@ release: ch01_rel \
 		 ch02_rel \
 		 ch03_rel \
 		 ch04_rel \
-		 ch05_rel
+		 ch05_rel \
+		 ch06_rel
 
 debug:  ch01 \
 		ch02 \
 		ch03 \
 		ch04 \
-		ch05
+		ch05 \
+		ch06
 
 clean:
 	find . -name "CH??_*" | xargs rm -f 
@@ -331,3 +336,8 @@ ch05:
 	tcc -g ${CH05SRC15} -o ${CH05DST15}_dbg ${CFLAGSDBG}
 	tcc -g ${CH05SRC16} -o ${CH05DST16}_dbg ${CFLAGSDBG}
 
+ch06_rel:
+	gcc -s $(CFLAGS) ${CH06SRC01} -o ${CH06DST01}
+
+ch06:
+	tcc -g ${CH06SRC01} -o ${CH06DST01}_dbg ${CFLAGSDBG}
