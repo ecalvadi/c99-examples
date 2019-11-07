@@ -193,6 +193,10 @@ CH05DST16=./bin/CH05_16_Running
 CH06SRC01=./src/ch06/01_summing/summing.c
 CH06DST01=./bin/CH06_01_Summing
 
+CH06SRC01_2=./src/ch06/01_summing/summing_short.c
+CH06DST01_2=./bin/CH06_01_Summing_short
+
+
 default: debug
 
 all: release
@@ -338,6 +342,10 @@ ch05:
 
 ch06_rel:
 	gcc -s $(CFLAGS) ${CH06SRC01} -o ${CH06DST01}
+	gcc -s $(CFLAGS) ${CH06SRC01_2} -o ${CH06DST01_2}
+
 
 ch06:
 	tcc -g ${CH06SRC01} -o ${CH06DST01}_dbg ${CFLAGSDBG}
+	tcc -g ${CH06SRC01_2} -o ${CH06DST01_2}_dbg ${CFLAGSDBG}
+
