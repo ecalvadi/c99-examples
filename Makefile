@@ -196,6 +196,9 @@ CH06DST01=./bin/CH06_01_Summing
 CH06SRC01_2=./src/ch06/01_summing/summing_short.c
 CH06DST01_2=./bin/CH06_01_Summing_short
 
+CH06SRC02=./src/ch06/02_when/when.c
+CH06DST02=./bin/CH06_02_When
+
 
 default: debug
 
@@ -343,9 +346,10 @@ ch05:
 ch06_rel:
 	gcc -s $(CFLAGS) ${CH06SRC01} -o ${CH06DST01}
 	gcc -s $(CFLAGS) ${CH06SRC01_2} -o ${CH06DST01_2}
-
+	gcc -s $(CFLAGS) ${CH06SRC02} -o ${CH06DST02}
 
 ch06:
 	tcc -g ${CH06SRC01} -o ${CH06DST01}_dbg ${CFLAGSDBG}
 	tcc -g ${CH06SRC01_2} -o ${CH06DST01_2}_dbg ${CFLAGSDBG}
+	tcc -g ${CH06SRC02} -o ${CH06DST02}_dbg ${CFLAGSDBG}
 
