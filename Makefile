@@ -205,6 +205,9 @@ CH06DST03=./bin/CH06_03_While1
 CH06SRC04=./src/ch06/04_while2/while2.c
 CH06DST04=./bin/CH06_04_While2
 
+CH06SRC05=./src/ch06/05_cmpflt/cmpflt.c
+CH06DST05=./bin/CH06_05_Cmpflt
+
 default: debug
 
 all: release
@@ -354,6 +357,8 @@ ch06_rel:
 	gcc -s $(CFLAGS) ${CH06SRC02} -o ${CH06DST02}
 	gcc -s $(CFLAGS) ${CH06SRC03} -o ${CH06DST03}
 	gcc -s $(CFLAGS) ${CH06SRC04} -o ${CH06DST04}
+	gcc -s $(CFLAGS) ${CH06SRC05} -o ${CH06DST05}
+
 
 ch06:
 	tcc -g ${CH06SRC01} -o ${CH06DST01}_dbg ${CFLAGSDBG}
@@ -361,4 +366,5 @@ ch06:
 	tcc -g ${CH06SRC02} -o ${CH06DST02}_dbg ${CFLAGSDBG}
 	tcc -g ${CH06SRC03} -o ${CH06DST03}_dbg ${CFLAGSDBG}
 	tcc -g ${CH06SRC04} -o ${CH06DST04}_dbg ${CFLAGSDBG}
+	tcc -g ${CH06SRC05} -o ${CH06DST05}_dbg ${CFLAGSDBG} -lm
 
