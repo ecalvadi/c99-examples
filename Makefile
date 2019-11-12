@@ -211,6 +211,12 @@ CH06DST05=./bin/CH06_05_Cmpflt
 CH06SRC06=./src/ch06/06_truefalse/truefalse.c
 CH06DST06=./bin/CH06_06_Truefalse
 
+CH06SRC07=./src/ch06/07_truth/truth.c
+CH06DST07=./bin/CH06_07_Truth
+
+CH06SRC08=./src/ch06/08_trouble/trouble.c
+CH06DST08=./bin/CH06_08_Trouble
+
 
 default: debug
 
@@ -363,6 +369,8 @@ ch06_rel:
 	gcc -s $(CFLAGS) ${CH06SRC04} -o ${CH06DST04}
 	gcc -s $(CFLAGS) ${CH06SRC05} -o ${CH06DST05}
 	gcc -s $(CFLAGS) ${CH06SRC06} -o ${CH06DST06}
+	gcc -s $(CFLAGS) ${CH06SRC07} -o ${CH06DST07}
+	gcc -s $(CFLAGS) ${CH06SRC08} -o ${CH06DST08}
 
 ch06:
 	tcc -g ${CH06SRC01} -o ${CH06DST01}_dbg ${CFLAGSDBG}
@@ -372,4 +380,6 @@ ch06:
 	tcc -g ${CH06SRC04} -o ${CH06DST04}_dbg ${CFLAGSDBG}
 	tcc -g ${CH06SRC05} -o ${CH06DST05}_dbg ${CFLAGSDBG} -lm
 	tcc -g ${CH06SRC06} -o ${CH06DST06}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH06SRC07} -o ${CH06DST07}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH06SRC08} -o ${CH06DST08}_dbg ${CFLAGSDBG} 
 
