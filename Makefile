@@ -217,6 +217,9 @@ CH06DST07=./bin/CH06_07_Truth
 CH06SRC08=./src/ch06/08_trouble/trouble.c
 CH06DST08=./bin/CH06_08_Trouble
 
+CH06SRC09=./src/ch06/09_boolean/boolean.c
+CH06DST09=./bin/CH06_09_Boolean
+
 
 default: debug
 
@@ -371,6 +374,8 @@ ch06_rel:
 	gcc -s $(CFLAGS) ${CH06SRC06} -o ${CH06DST06}
 	gcc -s $(CFLAGS) ${CH06SRC07} -o ${CH06DST07}
 	gcc -s $(CFLAGS) ${CH06SRC08} -o ${CH06DST08}
+	gcc -s $(CFLAGS) ${CH06SRC09} -o ${CH06DST09}
+
 
 ch06:
 	tcc -g ${CH06SRC01} -o ${CH06DST01}_dbg ${CFLAGSDBG}
@@ -382,4 +387,5 @@ ch06:
 	tcc -g ${CH06SRC06} -o ${CH06DST06}_dbg ${CFLAGSDBG} 
 	tcc -g ${CH06SRC07} -o ${CH06DST07}_dbg ${CFLAGSDBG} 
 	tcc -g ${CH06SRC08} -o ${CH06DST08}_dbg ${CFLAGSDBG} 
+	tcc -g ${CH06SRC09} -o ${CH06DST09}_dbg ${CFLAGSDBG} 
 
